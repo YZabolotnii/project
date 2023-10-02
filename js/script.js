@@ -1,18 +1,24 @@
 "use strict";
 
-function firstTask() {
-    const arr = [3, 5, 8, 16, 20, 23, 50];
-    const result = [];
+const numberOfFilms = +prompt('How many films did you wach?');
 
-    for (let i = 0; i < arr.length; i++) {
-        result[i] = arr[i];
-    }
-    
-    console.log(result);
-    return result;
-}
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privan: false
+};
 
-firstTask();
+const a = prompt('Which one was last?', ''),
+      b = prompt('Which mark?', ''),
+      c = prompt('Which one was last?', ''),
+      d = prompt('Which mark?', '');
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
 
 
 
