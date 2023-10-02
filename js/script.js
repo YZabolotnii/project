@@ -7,16 +7,32 @@ const personalMovieDB = {
     movies: {},
     actors: {},
     genres: [],
-    privan: false
+    privat: false
 };
 
-const a = prompt('Which one was last?', ''),
-      b = prompt('Which mark?', ''),
-      c = prompt('Which one was last?', ''),
-      d = prompt('Which mark?', '');
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Which one was last?', ''),
+          b = prompt('Which mark?', '');
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('Done');
+    } else {
+        console.log('Error');
+        i--;
+    }
+
+}
+
+if (personalMovieDB.count < 10) {
+    console.log('You wached not many films:(');
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log('You are classic films watcher:)');
+} else if (personalMovieDB.count >= 30) {
+    console.log('You are films fanat;)');
+} else {
+    console.log('Error 404');
+};
 
 console.log(personalMovieDB);
 
